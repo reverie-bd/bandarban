@@ -96,6 +96,26 @@
     ],
     answer: `It was a real pleasure helping you explore Bandarban! 🌿 Bandarban has a way of staying with people long after they leave — I genuinely hope you get to experience it for yourself. If any questions come up before you go, I'm right here. Safe and wonderful travels! 😊`
   },
+ {
+  id: 'spot_nilachal',
+  keywords: ['nilachal','nilachal hill','nilachal viewpoint','nilachal sunrise','nilachal mist','what is nilachal','tell me about nilachal','about nilachal','nilachal bandarban'],
+  answer: `Nilachal is the hilltop viewpoint that most visitors see first and many say it sets the entire tone of the trip.<br><br>It sits above Bandarban town and looks out over a wide valley of ridgelines and river bends. The best time to go is just before or at dawn when the valley below is still full of mist and the hills appear and disappear as the light shifts. It is a short ride from town and easy to visit on its own or as the first stop of a longer day.<br><br>Sunrise at Nilachal is genuinely one of those small travel moments that stays with you. It costs very little and asks almost nothing of you and delivers something that feels completely out of proportion to the effort.`
+},
+{
+  id: 'spot_boga',
+  keywords: ['boga lake','boga lake trek','boga lake hike','boga lake camp','boga lake overnight','boga lake difficulty','how to reach boga lake','how to get to boga lake','what is boga lake','tell me about boga lake','about boga lake','boga bandarban','trek to boga','hike to boga'],
+  answer: `Boga Lake is a mountain lake reached by jeep to Ruma Bazaar followed by a 2 to 3 hour uphill trek through jungle and ridgeline. The lake itself sits at altitude and has a stillness that feels genuinely earned after the climb.<br><br>It is the moderate route that most visitors do after the town highlights and one of the most memorable stops in the district. An overnight stay is strongly recommended the morning light at that altitude, with the hills quiet and the lake flat and clear, is something most people do not expect. A local guide is strongly advisable not just for safety but because they change what the trek actually gives you.<br><br>If you are trying to decide whether it is worth the extra effort, the short answer is yes.`
+},
+{
+  id: 'spot_nafakhum',
+  keywords: ['nafakhum','nafakhum falls','nafakhum waterfall','nafakhum trek','how to get to nafakhum','how to reach nafakhum','what is nafakhum','tell me about nafakhum','about nafakhum','nafakhum bandarban','trek to nafakhum','nafakhum route','nafakhum difficulty'],
+  answer: `Nafakhum Falls is one of the most dramatic natural sights in Bangladesh and for most people who make it there, the most memorable thing they do in the country.<br><br>It is a remote multi-day route from Thanchi through jungle, river crossings, and real elevation changes. The falls themselves are wide, powerful, and entirely surrounded by forest — the kind of place that does not feel like it exists until you are standing in front of it. A licensed local guide is essential on this route, and the right guide makes the journey as rewarding as the destination.<br><br>It is not a casual undertaking. But the people who go tend to stop describing it in practical terms fairly quickly — it is simply something you have to see.`
+},
+{
+  id: 'spot_nilgiri',
+  keywords: ['nilgiri','nilgiri hill','nilgiri peak','nilgiri sunrise','nilgiri overnight','nilgiri resort','nilgiri stay','what is nilgiri','tell me about nilgiri','about nilgiri','nilgiri bandarban','nilgiri clouds','stay at nilgiri','night at nilgiri'],
+  answer: `Nilgiri is a high-altitude scenic spot reached by the hill road through Chimbuk, and the drive up is part of the experience — the road climbs through cloud-level bends, jungle ridgelines, and views that open gradually as you gain height.<br><br>An overnight stay is strongly recommended. Waking above the clouds at Nilgiri, with the hills still quiet and the mist moving through the valleys below, is the moment many visitors describe as the emotional high point of the trip. The cool air and the particular quality of the morning light up there are difficult to replicate at any other stop in the district.<br><br>Weather can change quickly — which is actually part of what makes it special. The clouds roll in and the whole landscape shifts in minutes.`
+},      
   {
     id: "places_overview",
     keywords: [
@@ -294,6 +314,10 @@ const CHIP_MAP={
   solo_travel:           [{label:"🛡️ Safety",msg:"is it safe"},{label:"🗓️ Plan a trip",msg:"help me plan a trip"},{label:"🥾 Trekking",msg:"trekking options"}],
   excitement_response:   [{label:"🗺️ Places",msg:"best places to visit"},{label:"🗓️ Plan a trip",msg:"help me plan a trip"},{label:"🌤️ Best season",msg:"best time to visit"}],
   family_accessibility:  [{label:"🗺️ Places",msg:"best places to visit"},{label:"🏨 Where to stay",msg:"where to stay"},{label:"🗓️ Plan a trip",msg:"help me plan a trip"}],
+  spot_nilachal:  [{label:"🗺️ Places",msg:"best places to visit"},{label:"🗓️ Plan a trip",msg:"help me plan a trip"},{label:"🚌 Getting here",msg:"how to get to bandarban"}],
+  spot_boga:  [{label:"🥾 Trekking",msg:"trekking options"},{label:"🏨 Where to stay",msg:"where to stay"},{label:"🎒 What to pack",msg:"what to pack"}],
+  spot_nafakhum:  [{label:"🥾 Trekking",msg:"trekking options"},{label:"🏨 Where to stay",msg:"where to stay"},{label:"🎒 What to pack",msg:"what to pack"}],
+  spot_nilgiri:  [{label:"🌤️ Best season",msg:"best time to visit"},{label:"🏨 Where to stay",msg:"where to stay"},{label:"🗓️ Plan a trip",msg:"help me plan a trip"}],
   greetings:             null,
   confusion_recovery:    null
 };
@@ -573,6 +597,17 @@ function handleText(text) {
   const packingLocks = ["raincoat","rain jacket","waterproof jacket","waterproof shoes","trekking shoes","trekking boots","walking shoes","packing list","what to pack","what to bring","what to wear","do i need a raincoat","should i bring","should i pack","what should i wear","what should i bring","what should i pack","what gear","what equipment"];
   if (hasAny(packingLocks)) return find("packing_items");
 
+// Spot-specific locks — must come before places_overview
+const spotNilachalLocks = ['nilachal','about nilachal','tell me about nilachal','nilachal viewpoint','nilachal sunrise','nilachal hill'];
+const spotBogaLocks = ['boga lake','about boga lake','tell me about boga lake','boga lake trek','boga lake hike','boga lake camp','trek to boga','hike to boga'];
+const spotNafakhumLocks = ['nafakhum','nafakhum falls','nafakhum waterfall','about nafakhum','tell me about nafakhum','nafakhum trek','trek to nafakhum'];
+const spotNilgiriLocks = ['nilgiri','about nilgiri','tell me about nilgiri','nilgiri hill','nilgiri sunrise','nilgiri overnight','stay at nilgiri'];
+
+if (hasAny(spotNilachalLocks)) return find('spot_nilachal');
+if (hasAny(spotBogaLocks)) return find('spot_boga');
+if (hasAny(spotNafakhumLocks)) return find('spot_nafakhum');
+if (hasAny(spotNilgiriLocks)) return find('spot_nilgiri');
+    
   // Trekking — place-named queries (must come before places_overview)
   const trekkingNamedLocks = ["boga lake trek","boga trek","keokradong trek","nafakhum trek","tajingdong trek","how hard is boga","how hard is keokradong","how hard is nafakhum","trek to boga","trek to keokradong","trek to nafakhum","overnight trek","multi day trek","trekking to","hiking to","how long is the trek","how long is the hike","how difficult is the","how difficult is trekking","difficult route","difficult trail","hard route","hard trail"];
   if (hasAny(trekkingNamedLocks)) return find("trekking_difficulty");

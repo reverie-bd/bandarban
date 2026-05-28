@@ -115,7 +115,12 @@
   id: 'spot_nilgiri',
   keywords: ['nilgiri','nilgiri hill','nilgiri peak','nilgiri sunrise','nilgiri overnight','nilgiri resort','nilgiri stay','what is nilgiri','tell me about nilgiri','about nilgiri','nilgiri bandarban','nilgiri clouds','stay at nilgiri','night at nilgiri'],
   answer: `Nilgiri is a high-altitude scenic spot reached by the hill road through Chimbuk, and the drive up is part of the experience — the road climbs through cloud-level bends, jungle ridgelines, and views that open gradually as you gain height.<br><br>An overnight stay is strongly recommended. Waking above the clouds at Nilgiri, with the hills still quiet and the mist moving through the valleys below, is the moment many visitors describe as the emotional high point of the trip. The cool air and the particular quality of the morning light up there are difficult to replicate at any other stop in the district.<br><br>Weather can change quickly — which is actually part of what makes it special. The clouds roll in and the whole landscape shifts in minutes.`
-},      
+},
+  {
+  id: "spot_golden_temple",
+  keywords: ["golden temple","buddha dhatu jadi","buddhist temple","bandarban temple","golden temple bandarban","buddha dhatu jadi bandarban","what is the golden temple","tell me about the golden temple","about the golden temple","about buddha dhatu jadi","tell me about buddha dhatu jadi","theravada temple","temple bandarban","main temple"],
+  answer: `Buddha Dhatu Jadi — known as the Golden Temple — is the most significant Buddhist site in Bandarban and one of the most visually striking in Bangladesh. 🛕<br><br>It sits on a hilltop above the town, and the approach up through the temple complex gives you wide views over the surrounding valleys and ridgelines. The main shrine is a large, richly decorated Theravada Buddhist pagoda — golden, layered, and genuinely beautiful in a way that photographs do not fully capture. The atmosphere is calm and unhurried; it is a place that asks you to slow down, and most visitors find that easy to do.<br><br>It is close to town, easy to reach, and works well at any time of day — though morning visits when it is quieter have a particular quality. Dress modestly and remove footwear at the entrance. For many visitors it ends up being the cultural moment of the trip — the one that stays with them alongside the hill views.`
+},
   {
     id: "places_overview",
     keywords: [
@@ -318,6 +323,7 @@ const CHIP_MAP={
   spot_boga:  [{label:"🥾 Trekking",msg:"trekking options"},{label:"🏨 Where to stay",msg:"where to stay"},{label:"🎒 What to pack",msg:"what to pack"}],
   spot_nafakhum:  [{label:"🥾 Trekking",msg:"trekking options"},{label:"🏨 Where to stay",msg:"where to stay"},{label:"🎒 What to pack",msg:"what to pack"}],
   spot_nilgiri:  [{label:"🌤️ Best season",msg:"best time to visit"},{label:"🏨 Where to stay",msg:"where to stay"},{label:"🗓️ Plan a trip",msg:"help me plan a trip"}],
+  spot_golden_temple: [{label:"🌿 Culture",msg:"local culture"},{label:"🗺️ Places",msg:"best places to visit"},{label:"🗓️ Plan a trip",msg:"help me plan a trip"}],
   greetings:             null,
   confusion_recovery:    null
 };
@@ -609,6 +615,9 @@ function handleText(text) {
 
   const spotNilgiriLocks = ["nilgiri","about nilgiri","tell me about nilgiri","nilgiri hill","nilgiri sunrise","nilgiri overnight","stay at nilgiri"];
   if (hasAny(spotNilgiriLocks)) return find("spot_nilgiri");
+    
+  const spotGoldenTempleLocks = ["golden temple","buddha dhatu jadi","tell me about the golden temple","about the golden temple","tell me about buddha dhatu jadi","about buddha dhatu jadi","buddhist temple bandarban","main temple bandarban","theravada temple"];
+  if (hasAny(spotGoldenTempleLocks)) return find("spot_golden_temple");
     
   // Trekking — place-named queries (must come before places_overview)
   const trekkingNamedLocks = ["boga lake trek","boga trek","keokradong trek","nafakhum trek","tajingdong trek","how hard is boga","how hard is keokradong","how hard is nafakhum","trek to boga","trek to keokradong","trek to nafakhum","overnight trek","multi day trek","trekking to","hiking to","how long is the trek","how long is the hike","how difficult is the","how difficult is trekking","difficult route","difficult trail","hard route","hard trail"];

@@ -129,7 +129,7 @@
     keywords: [
       "food","eat","restaurant","local food","cuisine","meal","dish","drink","water","breakfast","lunch","dinner","vegetarian","vegan","halal","snack","cafe","coffee","market","try","taste","street food","hungry","bamboo","chicken","fish","rice","eatery","tea","coffee","drinks","breakfast","lunch","dinner","snacks","street food","local drinks","warm drink","hot drink"
     ],
-    answer: `Local options include bamboo chicken, fresh river fish, and rice-based meals — simple, honest food worth trying. 🍲 Town restaurants cover everyday needs; remote areas have limited choices, so carrying snacks is wise.<br><br>Vegetarian options are available in town; halal food is generally accessible across the district. Use bottled water rather than tap water throughout.`
+    answer: `Local options include bamboo chicken, fresh river fish, and rice-based meals — simple, honest food worth trying. 🍲 Town restaurants cover everyday needs; remote areas have limited choices, so carrying snacks is wise.<br><br>Vegetarian options are available in town; halal food is generally accessible across the district. Use bottled water rather than tap water throughout — the food here is simple and honest, and that is exactly what makes it memorable.`
   },
   {
     id: "season_weather",
@@ -166,7 +166,7 @@
     keywords: [
       "photo","photos","photograph","photographs","picture","pictures","camera","drone","selfie","capture","shoot","shot","snap","take picture","take photo","permission for photo"
     ],
-    answer: `Photos are welcome in many places, but it is always best to ask before photographing people or village spaces 📷<br><br>That simple courtesy is especially important in indigenous communities and around homes or places of worship. If you are unsure, a quick request for permission is the most respectful approach.`
+    answer: `Photos are welcome in many places, but it is always best to ask before photographing people or village spaces 📷<br><br>That simple courtesy is especially important in indigenous communities and around homes or places of worship. If you are unsure, a quick request is always welcome — and that small gesture of respect tends to open rather than close doors.`
   },
   {
     id: "local_culture",
@@ -222,14 +222,14 @@
     keywords: [
       "vaccination","vaccine","vaccinate","malaria","mosquito","leech","insect","bug","spider","snake","health","medical","doctor","hospital","clinic","sick","ill","injury","first aid","medicine","pharmacy","dengue","disease","infection","allergy","bite","sting"
     ],
-    answer: `Wise to think about this ahead of time — a little preparation here goes a long way. 🌿<br><br>Insect repellent is genuinely useful — mosquitoes and leeches can appear on jungle and hill routes, especially around and after monsoon season. Covered shoes and light long clothing help on forest trails. Basic medical facilities are available in Bandarban town; for remote routes, a small first-aid kit is a practical precaution. Check with your doctor about any vaccinations before travel.`
+    answer: `Wise to think about this ahead of time — a little preparation here goes a long way. 🌿<br><br>Insect repellent is genuinely useful — mosquitoes and leeches can appear on jungle and hill routes, especially around and after monsoon season. Covered shoes and light long clothing help on forest trails. Basic medical facilities are available in Bandarban town; for remote routes, a small first-aid kit is a practical precaution. Check with your doctor about any vaccinations before travel — a little preparation here means nothing gets in the way of the trip itself.`
   },
   {
     id: "local_transport",
     keywords: [
       "cng","rickshaw","auto","auto-rickshaw","tuk tuk","tempo","microbus","local bus","chander gari","chandar gari","jeep hire","rent","motorbike","motorcycle","taxi","ride","local transport","how to move","getting around","around town","within bandarban","inside","local travel","jeep hire","jeep rental","hire jeep","rent jeep","transport here","from town to","local jeep","local vehicle","how to reach nilachal","how to reach meghla","how to reach nilgiri"
     ],
-    answer: `Within town, CNG auto-rickshaws and rickshaws are easy and affordable. 🚐 For hill routes like Chimbuk or Nilgiri, jeeps (locally called chander gari) are the standard option — arrange through your accommodation or the local stand.<br><br>Boat travel connects remote river areas. The combination of CNG, jeep, and boat covers almost any route in the district.`
+    answer: `Within town, CNG auto-rickshaws and rickshaws are easy and affordable. 🚐 For hill routes like Chimbuk or Nilgiri, jeeps (locally called chander gari) are the standard option — arrange through your accommodation or the local stand.<br><br>Boat travel connects remote river areas. The combination of CNG, jeep, and boat covers almost any route in the district — and the jeep roads through the hills are an experience in themselves.`
   },
   {
     id: "destination_character",
@@ -352,15 +352,15 @@ function resolveAnswer(id, lower) {
       const warmMonths = ["march","april","may"];
       const monsoon    = ["june","july","august","september"];
       if (coolMonths.some(m => has(m)))
-        return `December to February is the coolest and clearest time — great for trekking and hill views. ❄️ Temperatures drop noticeably at altitude, so a light jacket is useful. It is the most reliable window for trekking, hill views, and comfortable travel at altitude.`;
+        return `December to February is the coolest and clearest time — great for trekking and hill views. ❄️ Temperatures drop noticeably at altitude, so a light jacket is useful. It is the most reliable window for trekking and hill views — and the cool, clear mornings at altitude have a quality that is hard to leave behind.`;
       if (goodMonths.some(m => has(m)))
         return `October and November are genuinely one of the best windows. 🌿 The monsoon has cleared, the hills are still richly green, and the post-rain light on the ridgelines has a quality that is hard to describe until you see it. Conditions for trekking and travel are at their best too. It is a busier period, so booking accommodation a little in advance is wise.`;
       if (warmMonths.some(m => has(m)))
-        return `March to May is a transition period — warmer and more humid, with pre-monsoon showers starting in April. ☀️ Town-based sightseeing is still comfortable, but remote routes can be unpredictable. It is manageable if you plan around conditions.`;
+        return `March to May is a transition period — warmer and more humid, with pre-monsoon showers starting in April. ☀️ Town-based sightseeing is still comfortable, but remote routes can be unpredictable. It is manageable with a little flexibility — and the quieter crowds are a genuine bonus.`;
       if (monsoon.some(m => has(m)) || has("monsoon") || has("rainy") || has("rain") || has("wet season") || has("avoid"))
         return `June to September is monsoon season — heavy rain can make remote routes difficult or unsafe. 🌧️ That said, the hills turn intensely green and waterfalls are at their most dramatic. If you are flexible and prepared, it can be a rewarding but demanding time to visit.`;
       if (has("cold") || has("cool") || has("temperature") || has("fog") || has("mist") || has("chilly"))
-        return `Bandarban gets noticeably cool from November through February, especially at altitude — think light jacket weather rather than heavy winter gear. ❄️ December and January are the coldest months. Lower areas stay mild year-round.`;
+        return `Bandarban gets noticeably cool from November through February, especially at altitude — think light jacket weather rather than heavy winter gear. ❄️ December and January are the coldest months. Lower areas stay mild year-round — but it is the cool, misty mornings at altitude that most people come for.`;
       if (has("hot") || has("heat") || has("humid") || has("summer"))
         return `The hottest and most humid months are April through June, before and during the monsoon. 🌡️ It can feel intense on exposed routes. Early mornings are the most comfortable time for any outdoor activity in that period.`;
       return `October to March is the most comfortable time — clear skies, good trekking conditions, and cooler temperatures at altitude. ☀️ Monsoon runs June to September, bringing heavy rain but dramatic scenery. If you have a specific month in mind, just ask and I'll give you a focused answer.`;
@@ -370,7 +370,7 @@ function resolveAnswer(id, lower) {
       if ((has("boga") || has("boga lake")) && (has("trek") || has("hike") || has("hard") || has("difficult") || has("how")))
         return `Boga Lake is a moderate route — a jeep ride to Ruma Bazaar followed by a 2–3 hour uphill trek. 🥾 It is manageable for reasonably fit walkers, and an overnight stay is strongly recommended. A local guide is advisable for first-timers.`;
       if ((has("nafakhum") || has("keokradong") || has("tajingdong")) && (has("trek") || has("hike") || has("hard") || has("difficult") || has("how")))
-        return `Nafakhum and Keokradong are among the more demanding routes — full-day or multi-day treks with remote terrain. 🧗 A licensed guide is required and preparation matters: fitness, weather timing, and permits for some areas. Not suitable for casual visitors.`;
+        return `Nafakhum and Keokradong are among the more demanding routes — full-day or multi-day treks with remote terrain. 🧗 A licensed guide is required and preparation matters: fitness, weather timing, and permits for some areas. For those who are prepared, the remoteness is exactly what makes them unforgettable.`;
       if (has("beginner") || has("easy") || has("gentle") || has("easy walk") || has("easy hike") || has("easy trek") || has("first time trek") || has("not hard") || has("not difficult"))
         return `For easy outings, Nilachal, Meghla, and the Golden Temple are all accessible with minimal effort — great for first-timers. 🌿 Boga Lake steps it up slightly but is manageable for most fit walkers — a good second-day option after the town highlights.`;
       if (has("guide") || has("licensed") || has("need a guide") || has("without guide") || has("alone trek"))
@@ -382,7 +382,7 @@ function resolveAnswer(id, lower) {
 
     case "stay_sleep": {
       if (has("book") || has("advance") || has("reservation") || has("reserve") || has("walk in") || has("show up") || has("without booking"))
-        return `Booking in advance is wise for peak season (October to March) and for accommodation outside town — options there are limited. 🏨 For a short town-based stay outside peak season, showing up is usually fine. Remote spots like Nilgiri fill up quickly.`;
+        return `Booking in advance is wise for peak season (October to March) and for accommodation outside town — options there are limited. 🏨 For a short town-based stay outside peak season, showing up is usually fine. Remote spots like Nilgiri fill up quickly — and those overnight stays are often the moments people talk about most afterwards.`;
       if (has("camp") || has("camping") || has("tent") || has("sleep outside"))
         return `Camping is possible in some areas, particularly around Boga Lake and on longer routes. ⛺ It is not formally organised — most visitors arrange it through local guides or guesthouses. Check current access conditions before planning.`;
       if (has("nilgiri") || has("boga") || has("outside town") || has("hill stay") || has("overnight outside") || has("remote stay"))
@@ -390,25 +390,25 @@ function resolveAnswer(id, lower) {
       if (has("luxury") || has("resort") || has("best hotel") || has("good hotel") || has("comfortable"))
         return `There are a few resort-style options on the hill routes, particularly around Nilgiri and Chimbuk. 🏡 In town, mid-range hotels offer good comfort. True luxury is limited compared to major cities, but several properties are well-kept and scenic.`;
       if (has("budget") || has("cheap") || has("affordable") || has("low cost") || has("backpacker"))
-        return `Budget guesthouses in Bandarban town are clean and functional — the most common option. 💰 Expect basic rooms. For remote routes, accommodation is simpler still: practical rather than comfortable.`;
+        return `Budget guesthouses in Bandarban town are clean and functional — the most common option. 💰 Expect basic rooms in town. For remote routes, accommodation is simpler — but the surroundings more than make up for it.`;
       return `Bandarban town is the best base — budget guesthouses to mid-range hotels available. 🏨 For Boga Lake or Nilgiri, staying overnight makes the trip far more rewarding. Book ahead in peak season (October to March). Whatever your budget or travel style, the town has a base that works — and overnights outside town are well worth the extra planning.`;
     }
 
     case "itinerary_planning": {
       const hasDay = (n, word) => has(n + " day") || has(n + " days") || has(word + " day") || has(word + " days");
       if (hasDay("1","one") || has("half day") || has("few hours") || has("just a day") || has("only a day") || has("single day"))
-        return `One day is enough for a genuinely good visit. 🗓️ Nilachal for the view, Buddha Dhatu Jadi (Golden Temple) for culture, and Meghla for a relaxed walk — that fills a day comfortably. Start at Nilachal before 8am if you can; standing above the mist with the valley still asleep below is one of those moments that makes the whole trip feel worthwhile.`;
+        return `One day is enough for a genuinely good first encounter with Bandarban. 🗓️<br><br>Start at <b>Nilachal</b> before 8am if you can — standing above the valley mist with the hills still quiet is one of those moments that makes the whole trip feel worthwhile. Mid-morning, head to <b>Buddha Dhatu Jadi</b>, the Golden Temple — a calm, elevated Theravada Buddhist site with wide hill views and an atmosphere that asks you to slow down. Close the day at <b>Meghla</b> for a lakeside walk and the hanging bridge.<br><br>A focused day, but a full one — and most people leave already thinking about coming back.`;
       if (hasDay("2","two") || has("2 nights") || has("two nights") || has("weekend"))
-        return `Two days gives you a really satisfying trip. 🗓️ Day 1: Nilachal, Golden Temple, Meghla. Day 2: the drive up to Chimbuk — and it genuinely is a drive worth taking slowly, the road itself winds through some of the most beautiful hill scenery in the district. An overnight at Nilgiri if access allows turns a good trip into one people talk about for years.`;
+        return `Two days gives you a genuinely satisfying trip with real variety. 🗓️<br><br><b>Day 1 — Town and temples:</b> Nilachal at dawn for the valley mist view, Buddha Dhatu Jadi mid-morning for its calm Buddhist atmosphere and hillside setting, then Meghla in the afternoon for a relaxed lakeside walk. A full day that gives you the heart of Bandarban town.<br><br><b>Day 2 — Into the hills:</b> The drive up to Chimbuk is worth taking slowly — the road winds through cloud-level hill scenery that opens up gradually and rewards patience. From Chimbuk, continue to Nilgiri if access allows; an overnight there turns a good trip into one people genuinely talk about for years. Waking above the clouds is something most visitors never quite forget.`;
       if (hasDay("3","three"))
-        return `Three days opens things up nicely. 🗓️ Day 1: Nilachal, Golden Temple, Meghla. Day 2: Chimbuk or Nilgiri. Day 3: a river journey on the Sangu, or start the route towards Boga Lake if fitness allows.`;
+        return `Three days is a sweet spot — enough time to move through different landscapes without feeling rushed. 🗓️<br><br><b>Day 1 — Town and viewpoints:</b> Nilachal at dawn for the mist-covered valley, Buddha Dhatu Jadi for the calm of its hilltop Buddhist setting, and Meghla for an easy afternoon walk. The town reveals itself slowly and this day sets the tone well.<br><br><b>Day 2 — The hill drive:</b> Head up to Chimbuk and on to Nilgiri. The road climbs through some of the most beautiful hill scenery in the district — cloud-level bends, jungle ridgelines, and sudden wide views. An overnight at Nilgiri makes this the emotional centrepiece of the trip; the sunrise from that altitude is hard to describe.<br><br><b>Day 3 — The river:</b> A boat journey on the Sangu is the natural close — moving slowly through the gorge, past villages and jungle banks, at a pace that feels entirely different from the hills. It is the kind of ending that leaves the trip feeling complete.`;
       if (has("4 day") || has("4 days") || has("four day") || has("four days") || has("5 day") || has("5 days") || has("five day") || has("five days"))
-        return `Four to five days lets you go deeper. 🗓️ Days 1–2: town and Chimbuk/Nilgiri. Days 3–4: Boga Lake with an overnight stay. Final day: river trip or rest. A local guide is strongly recommended for the Boga section.`;
+        return `Four to five days lets you move through Bandarban's different landscapes properly — town, hills, remote lake, and river. 🗓️<br><br><b>Days 1–2 — Town to high altitude:</b> Day 1 covers Nilachal, the Golden Temple, and Meghla at a comfortable pace. Day 2 takes you up the hill road to Chimbuk and Nilgiri — an overnight at Nilgiri is worth it; the cloud views at that altitude have a quality most people do not expect.<br><br><b>Days 3–4 — Boga Lake:</b> A jeep to Ruma Bazaar followed by a 2–3 hour uphill trek brings you to one of the most rewarding spots in the district — a quiet mountain lake with a particular stillness that feels genuinely earned after the climb. Overnight here. A local guide is strongly recommended and adds real value on this section.<br><br><b>Final day:</b> A Sangu River boat journey on the way back — the shift from highland to river valley is a beautiful way to close the trip.`;
       if (has("6 day") || has("6 days") || has("7 day") || has("7 days") || has("one week") || has("a week") || has("week long"))
-        return `A week gives you time to see both the accessible and the remote. 🗓️ Days 1–2: town and nearby hills. Days 3–4: Boga Lake overnight. Days 5–7: Nafakhum or Keokradong — remote, demanding, and genuinely unforgettable with the right preparation.`;
+        return `A week is rare and genuinely rewarding — it lets you move from the easy to the extraordinary at a pace that feels right. 🗓️<br><br><b>Days 1–2:</b> Town, the Golden Temple, Meghla, and the hill drive to Chimbuk and Nilgiri. A solid foundation that gives you the character of the destination before the more demanding days ahead.<br><br><b>Days 3–4:</b> Boga Lake — jeep to Ruma Bazaar, uphill trek, overnight at the lake. The stillness up there is unlike anything in the accessible parts of the district.<br><br><b>Days 5–7:</b> Nafakhum Falls or Keokradong. These routes are multi-day, remote, and physically demanding — and they are the reason people who have been to Bandarban once come back a second time. The waterfall at Nafakhum, reached through jungle and river crossings, is one of the most striking natural sights in Bangladesh. A licensed guide is essential and non-negotiable here.<br><br>A week spent this way tends to change how people think about what a trip can be.`;
       if (has("first time") || has("first visit") || has("first trip") || has("never been") || has("where to start") || has("what first"))
-        return `For a first visit, keep it simple. 🗓️ Nilachal, Buddha Dhatu Jadi, and Meghla give you a real feel for the destination without logistical complexity. From there you can decide how much further you want to go.`;
-     return `A useful starting point: 🗓️ <b>1 day</b> covers Nilachal, Golden Temple, and Meghla comfortably. <b>2 days</b> adds Chimbuk or Nilgiri. <b>3+ days</b> opens up Boga Lake or a river journey. Bandarban rewards a slower pace — the best moments often happen between the planned stops.`;
+        return `For a first visit, keeping it simple is genuinely the right call. 🗓️ Nilachal for the hilltop view, Buddha Dhatu Jadi for the quiet calm of its Buddhist setting, and Meghla for an easy lakeside walk — these three give you a real and varied feel for Bandarban without any logistical complexity. Most first-time visitors leave surprised by how much those three stops alone deliver.`;
+     return `A useful starting point: 🗓️ <b>1 day</b> covers Nilachal, Golden Temple, and Meghla comfortably. <b>2 days</b> adds Chimbuk or Nilgiri. <b>3+ days</b> opens up Boga Lake or a river journey. Bandarban rewards a slower pace — the best moments often happen between the planned stops.<br><br>How many days are you planning?`;
     }
 
     case "safety_travel": {
@@ -421,8 +421,8 @@ function resolveAnswer(id, lower) {
       if (has("robbery") || has("theft") || has("crime") || has("pickpocket") || has("mugging") || has("steal"))
         return `Bandarban has a low crime rate and tourists rarely report problems. 🛡️ Standard precautions apply — keep valuables secure, and on remote routes a local guide provides both safety and local knowledge.`;
       if (has("flood") || has("landslide") || has("flash flood") || has("natural disaster"))
-        return `Landslides and flash floods are a real risk during monsoon season (June–September), particularly on hill and jungle routes. ⚠️ Check weather and route conditions before heading out and follow local advice.`;
-      return `Good to ask — and the honest answer is reassuring. 🛡️ Bandarban is generally a safe and welcoming destination. The main practical considerations are route conditions during monsoon and access rules for certain remote areas. With a little planning and awareness of seasonal conditions, Bandarban is a welcoming and rewarding destination.`;
+        return `Landslides and flash floods are a real risk during monsoon season (June–September), particularly on hill and jungle routes. ⚠️ Checking conditions and following local advice before heading out keeps things safe — and the same hills look extraordinary once the rain clears.`;
+      return `Good to ask — and the honest answer is reassuring. 🛡️ Bandarban is generally a safe and welcoming destination. The main practical considerations are route conditions during monsoon and access rules for certain remote areas. With a little preparation, almost nothing here gets in the way of a genuinely good trip.`;
     }
 
     case "local_culture": {
@@ -435,19 +435,19 @@ function resolveAnswer(id, lower) {
       if (has("friendly") || has("welcoming") || has("nice") || has("are people") || has("locals like") || has("how are") || has("reception"))
         return `People in Bandarban are genuinely warm and welcoming to visitors — it is one of the most consistently positive things travellers mention. 😊 A simple greeting goes a long way.`;
       if (has("religion") || has("buddhist") || has("buddhism") || has("temple") || has("worship") || has("mosque") || has("faith"))
-        return `Bandarban has a mix of religious communities — Theravada Buddhism is prominent among many indigenous groups; Islam is widely practised among Bengali communities. 🙏 Dress modestly and behave calmly at all religious sites.`;
+        return `Bandarban has a mix of religious communities — Theravada Buddhism is prominent among many indigenous groups; Islam is widely practised among Bengali communities. 🙏 Dress modestly and move calmly at religious sites — the Golden Temple in particular has a quiet, elevated atmosphere that stays with you.`;
       return `People in Bandarban are warm and welcoming — one of the things that makes the place memorable. 😊 The district is home to several indigenous communities (Marma, Mro, Bawm, Tripura) alongside Bengali communities. Bangla is widely spoken; basic English works in tourist areas. A local guide opens doors that are simply not accessible independently, and those encounters tend to be what people remember most about the trip.`;
     }
 
     case "family_accessibility": {
       if (has("kid") || has("kids") || has("child") || has("children") || has("toddler") || has("baby") || has("young child"))
-        return `Town-based spots are great for children — Nilachal, Meghla, and the Golden Temple are easy and enjoyable for young visitors. 🏡 Remote trekking is not suitable for young children. A one or two-day town-focused plan works very well for families.`;
+        return `Town-based spots are great for children — Nilachal, Meghla, and the Golden Temple are easy and enjoyable for young visitors. 🏡 Remote trekking is not suitable for young children. A one or two-day town-focused plan works beautifully — and young visitors tend to find the hanging bridge at Meghla and the Golden Temple genuinely memorable.`;
       if (has("elderly") || has("senior") || has("old") || has("grandparent") || has("grandfather") || has("grandmother") || has("mobility") || has("wheelchair") || has("disabled") || has("limited mobility"))
         return `For elderly visitors or limited mobility, stick to town and the main viewpoints — Nilachal, the Golden Temple, and Meghla are accessible without strenuous walking. 🏡 A jeep with a local driver makes it significantly more comfortable.`;
       if (has("couple") || has("honeymoon") || has("romantic") || has("partner") || has("anniversary") || has("just us two") || has("two of us"))
         return `Bandarban is lovely for couples — hill scenery, quiet guesthouses, and sunrise views at Nilachal or Nilgiri create a genuinely peaceful atmosphere. 🌄 An overnight at Nilgiri is especially popular and well worth it.`;
       if (has("parent") || has("mixed group") || has("all ages") || has("different ages") || has("group trip") || has("family group"))
-        return `For a mixed group with different fitness levels, base in town and use accessible spots — Nilachal, Golden Temple, Meghla. 🏡 Those wanting more can do Chimbuk by jeep while others rest in town. Keeps logistics simple and everyone comfortable.`;
+        return `For a mixed group with different fitness levels, base in town and use accessible spots — Nilachal, Golden Temple, Meghla. 🏡 Those wanting more can do Chimbuk by jeep while others rest in town. It keeps logistics simple — and everyone gets a version of Bandarban that works for them.`;
       return `Bandarban works well for families and all types of visitors. 🏡 Town-based spots — Nilachal, Golden Temple, Meghla — are easy and enjoyable for all ages. Remote trekking suits fit adults. Town-based sightseeing suits any group — the key is simply matching the route to the people.`;
     }
 

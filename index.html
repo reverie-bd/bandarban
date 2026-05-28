@@ -596,17 +596,19 @@ function handleText(text) {
   // Packing — raincoat specifically (must come before season_weather where 'rain' collides)
   const packingLocks = ["raincoat","rain jacket","waterproof jacket","waterproof shoes","trekking shoes","trekking boots","walking shoes","packing list","what to pack","what to bring","what to wear","do i need a raincoat","should i bring","should i pack","what should i wear","what should i bring","what should i pack","what gear","what equipment"];
   if (hasAny(packingLocks)) return find("packing_items");
+    
+  // Spot-specific intents — before places_overview catches these names
+  const spotNilachalLocks = ["nilachal","about nilachal","tell me about nilachal","nilachal viewpoint","nilachal sunrise","nilachal hill"];
+  if (hasAny(spotNilachalLocks)) return find("spot_nilachal");
 
-// Spot-specific locks — must come before places_overview
-const spotNilachalLocks = ['nilachal','about nilachal','tell me about nilachal','nilachal viewpoint','nilachal sunrise','nilachal hill'];
-const spotBogaLocks = ['boga lake','about boga lake','tell me about boga lake','boga lake trek','boga lake hike','boga lake camp','trek to boga','hike to boga'];
-const spotNafakhumLocks = ['nafakhum','nafakhum falls','nafakhum waterfall','about nafakhum','tell me about nafakhum','nafakhum trek','trek to nafakhum'];
-const spotNilgiriLocks = ['nilgiri','about nilgiri','tell me about nilgiri','nilgiri hill','nilgiri sunrise','nilgiri overnight','stay at nilgiri'];
+  const spotBogaLocks = ["boga lake","about boga lake","tell me about boga lake","boga lake trek","boga lake hike","boga lake camp","trek to boga","hike to boga"];
+  if (hasAny(spotBogaLocks)) return find("spot_boga");
 
-if (hasAny(spotNilachalLocks)) return find('spot_nilachal');
-if (hasAny(spotBogaLocks)) return find('spot_boga');
-if (hasAny(spotNafakhumLocks)) return find('spot_nafakhum');
-if (hasAny(spotNilgiriLocks)) return find('spot_nilgiri');
+  const spotNafakhumLocks = ["nafakhum","nafakhum falls","nafakhum waterfall","about nafakhum","tell me about nafakhum","nafakhum trek","trek to nafakhum"];
+  if (hasAny(spotNafakhumLocks)) return find("spot_nafakhum");
+
+  const spotNilgiriLocks = ["nilgiri","about nilgiri","tell me about nilgiri","nilgiri hill","nilgiri sunrise","nilgiri overnight","stay at nilgiri"];
+  if (hasAny(spotNilgiriLocks)) return find("spot_nilgiri");
     
   // Trekking — place-named queries (must come before places_overview)
   const trekkingNamedLocks = ["boga lake trek","boga trek","keokradong trek","nafakhum trek","tajingdong trek","how hard is boga","how hard is keokradong","how hard is nafakhum","trek to boga","trek to keokradong","trek to nafakhum","overnight trek","multi day trek","trekking to","hiking to","how long is the trek","how long is the hike","how difficult is the","how difficult is trekking","difficult route","difficult trail","hard route","hard trail"];
